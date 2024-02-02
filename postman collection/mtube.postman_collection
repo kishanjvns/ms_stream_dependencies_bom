@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "46fdb206-2de7-4dba-8c96-5e7fe8ec2c8c",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3321414"
+	},
+	"item": [
+		{
+			"name": "VideoService",
+			"item": [
+				{
+					"name": "uploadMedia",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/KISHA/Documents/KJ_mobile/com.whatsapp/WhatsApp/Media/WhatsApp Video/VID-20201114-WA0000.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/stream/api/v1/video",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stream",
+								"api",
+								"v1",
+								"video"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadMedia Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huX2RvZSIsInJvbGVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzA2Mjg3NjQ4LCJleHAiOjE3OTI2ODc2NDh9.USAP0kmkHQ4T-3GVckafdhzRoWSPVuE1WDOkz1nYunM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/KISHA/Documents/KJ_mobile/com.whatsapp/WhatsApp/Media/WhatsApp Video/VID-20201215-WA0051.mp4"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/videos/video",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"videos",
+								"video"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/stream/api/v1/video/2b46dca3-bd36-42ae-a5a5-d748eecc9faa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stream",
+								"api",
+								"v1",
+								"video",
+								"2b46dca3-bd36-42ae-a5a5-d748eecc9faa"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Store",
+			"item": [
+				{
+					"name": "registerAuth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"userName\": \"john_doe\",\r\n    \"password\": \"securepassword\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"isPrimaryEmail\": true,\r\n    \"contact\": \"+1234567890\",\r\n    \"isPrimaryContact\": true,\r\n    \"roles\": [\r\n        {\r\n            \"name\": \"USER\",\r\n            \"description\": \"user role\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authenticate",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTcwNDU0ODc3NiwiZXhwIjoxNzA0NjM1MTc2fQ.DHsgAxLl0IjCGc3MaxE246NvgY5kkKVpqQO5RkhBzAI",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"securepassword\",\r\n  \"userName\": \"john_doe\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/actuator/beans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"actuator",
+								"beans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/loadbyUserName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/users/api/v1/user/john_doe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"api",
+								"v1",
+								"user",
+								"john_doe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service discover",
+			"item": [
+				{
+					"name": "actuator/info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8761/actuator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8761",
+							"path": [
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review_service",
+			"item": [
+				{
+					"name": "video/like/dislike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"1\",\r\n    \"videoId\":\"ea3001e8-4400-4764-825b-8e2e9e4ee02f\",\r\n    \"isLiked\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/review/api/v1/reaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"review",
+								"api",
+								"v1",
+								"reaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "video/comment/replyToComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"1\",\r\n    \"videoId\":\"ea3001e8-4400-4764-825b-8e2e9e4ee02f\",\r\n    \"commentText\":\"this is test reply comment \",\r\n    \"parentCommentCommentId\":\"8bb97c4d-03d8-4960-acb6-830849a03e87\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8089/review/api/v1/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"review",
+								"api",
+								"v1",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "video/comment/getByVideoId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8089/review/api/v1/comment/ea3001e8-4400-4764-825b-8e2e9e4ee02f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"review",
+								"api",
+								"v1",
+								"comment",
+								"ea3001e8-4400-4764-825b-8e2e9e4ee02f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "video/comment/reply/id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8089/review/api/v1/comment/reply/8bb97c4d-03d8-4960-acb6-830849a03e87?pageNumber=1&pageSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"review",
+								"api",
+								"v1",
+								"comment",
+								"reply",
+								"8bb97c4d-03d8-4960-acb6-830849a03e87"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

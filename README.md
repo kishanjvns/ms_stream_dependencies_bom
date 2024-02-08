@@ -15,4 +15,4 @@ ms_stream_review is a micro service which contains the api to like/deslike the v
 ms_stream_videoService is a micro service which contains the API to upload and stream the video
 ms_stream_service_registry is a micro service which stores the eureka service registry
 
-![mtube flow diagram](https://github.com/kishanjvns/flow/blob/master/diagramFile/mtube.png)
+![mtube flow diagram]([https://github.com/kishanjvns/flow/blob/master/diagramFile/mtube.png](https://app.diagrams.net/#Hkishanjvns%2Fflow%2Fmaster%2FUntitled%20Diagram.drawio)https://app.diagrams.net/#Hkishanjvns%2Fflow%2Fmaster%2FUntitled%20Diagram.drawio)

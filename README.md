@@ -16,4 +16,3 @@ ms_stream_videoService is a micro service which contains the API to upload and s
 ms_stream_service_registry is a micro service which stores the eureka service registry
 
 ![mtube flow diagram](images/https://github.com/kishanjvns/flow/blob/master/diagramFile/mtube.png)
-![Alt text here](images/someimage.png)
